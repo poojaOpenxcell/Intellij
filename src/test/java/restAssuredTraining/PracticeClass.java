@@ -1,12 +1,10 @@
-package training;
+package restAssuredTraining;
 
-import io.restassured.RestAssured;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import static io.restassured.RestAssured.given;
 
-//public class TwitterAPI {
+public class PracticeClass {
 //
 //    //String oauth_consumer_key ="";
 //
@@ -35,4 +33,14 @@ import static io.restassured.RestAssured.given;
 //
 //
 //    }
-//}
+
+    @Test
+    public void reverseString(){
+        String str="Hey world";
+        String reverse= new StringBuilder(str).reverse().toString();
+        System.out.println(reverse);
+
+
+    }
+
+}

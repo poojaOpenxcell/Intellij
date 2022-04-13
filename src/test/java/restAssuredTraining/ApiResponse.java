@@ -1,4 +1,4 @@
-package training;
+package restAssuredTraining;
 
 import dataFile.Product;
 import org.junit.jupiter.api.Test;
@@ -56,7 +56,7 @@ public class ApiResponse {
                     statusCode(200).
                     body("records.size()", greaterThan(0)).
                     body("records.id", everyItem(notNullValue())).
-                    body("records.id[0]", equalTo("23"));
+                    body("records.id[0]", equalTo("30"));
 
     }
 

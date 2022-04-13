@@ -1,4 +1,4 @@
-package training;
+package restAssuredTraining;
 
 
 import io.restassured.RestAssured;
@@ -7,7 +7,6 @@ import io.restassured.response.Response;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import static io.restassured.RestAssured.baseURI;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 
@@ -42,7 +41,7 @@ public class BaseURI {
         .then()
                 .statusCode(200)
                 .and()
-                .body("records[1].name", equalTo("Sweatband"))
+                .body("records[1].name", equalTo("Poncho"))
                 .contentType(ContentType.JSON);
     }
 

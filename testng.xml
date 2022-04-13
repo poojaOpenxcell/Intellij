@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="API Automation" thread-count="2" parallel="methods">
+<!--    <test name="Reverse String">-->
+<!--        <classes>-->
+<!--            <class name="restAssuredTraining.Programs"/>-->
+<!--        </classes>-->
+<!--    </test>-->
+<!--    <test name="API test">-->
+<!--        <classes>-->
+<!--            <class name="restAssuredTraining.BaseURI"></class>-->
+<!--            <class name="restAssuredTraining.ApiTest"></class>-->
+<!--        </classes>-->
+<!--    </test>-->
+
+    <test name="Swagger Editor">
+        <classes>
+            <class name="swaggerEditor.RestAPI"></class>
+        </classes>
+    </test>
+    
+</suite>

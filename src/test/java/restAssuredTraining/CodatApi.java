@@ -1,24 +1,27 @@
-package training;
+package restAssuredTraining;
 
 import io.restassured.RestAssured;
+import io.restassured.specification.RequestSpecification;
 import org.junit.jupiter.api.Test;
-import org.testng.annotations.BeforeTest;
 
-import static io.restassured.RestAssured.basePath;
 import static io.restassured.RestAssured.given;
 
 public class CodatApi {
 
+    RequestSpecification reqSpec = RestAssured.given()
+            .baseUri("https://api.codat.io")
+            .basePath("/companies");
+
 
     @Test
     public void getCompanies(){
-        String browseURL = "https://api.codat.io/companies";
 
-        given()
+
+        given(reqSpec)
                 .param("page", "1")
                 .param("pageSize", "100")
         .when()
-                .get(browseURL)
+                .get()
         .then()
                 .statusCode(401)
                 .log()

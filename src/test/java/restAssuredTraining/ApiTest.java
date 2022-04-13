@@ -1,14 +1,11 @@
-package training;
+package restAssuredTraining;
 
 import dataFile.Product;
-import io.restassured.RestAssured;
-import org.junit.jupiter.api.Test;
-import java.util.HashMap;
-import java.util.Map;
+import org.testng.annotations.Test;
 
 
 import static io.restassured.RestAssured.given;
-import static io.restassured.RestAssured.when;
+
 
 public class ApiTest {
 
@@ -101,52 +98,44 @@ public class ApiTest {
     }
 
 
-    @Test
-    public void postLogin(){
-
-        String browseURL= "https://api-stripe-eu.test.jeev.es/v2/web/user/login";
-
-        String payload = "{\n" +
-                "    \"email\": \"pooja+24@tryjeeves.com\",\n" +
-                "    \"password\": \"Poo11\",\n" +
-                "    \"isBlockedTwoFactorAuth\": false,\n" +
-                "    \"blockedTwoFactorAuth\": \"\",\n" +
-                "    \"ipAddress\": \"3.128.57.106\"\n" +
-                "}";
-
-
-        Map<String,Object> headerMap = new HashMap<String,Object>();
-        headerMap.put("Accept", "application/json");
-        headerMap.put("Origin", "https://client-stripe-eu.test.jeev.es");
-        headerMap.put("Referer", "https://client-stripe-eu.test.jeev.es/");
-        headerMap.put("x-client-address", "3.128.57.106");
-        headerMap.put("platform-type", "webapp");
-        headerMap.put("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:98.0) Gecko/20100101 Firefox/98.0");
-        headerMap.put("Sec-Fetch-Dest", "empty");
-        headerMap.put("Sec-Fetch-Mode", "same-site");
-        headerMap.put("TE", "trailers");
-        headerMap.put("Connection", "keep-alive");
-
-        given().
-                headers(headerMap).
-                body(payload).
-
-        when().
-                get(browseURL).
-
-        then().
-                log().headers().statusCode(200);
+//    @Test
+//    public void postLogin(){
+//
+//        String browseURL= "https://api-stripe-eu.test.jeev.es/v2/web/user/login";
+//
+//        String payload = "{\n" +
+//                "    \"email\": \"pooja+24@tryjeeves.com\",\n" +
+//                "    \"password\": \"Poo11\",\n" +
+//                "    \"isBlockedTwoFactorAuth\": false,\n" +
+//                "    \"blockedTwoFactorAuth\": \"\",\n" +
+//                "    \"ipAddress\": \"3.128.57.106\"\n" +
+//                "}";
+//
+//
+//        Map<String,Object> headerMap = new HashMap<String,Object>();
+//        headerMap.put("Accept", "application/json");
+//        headerMap.put("Connection", "keep-alive");
+//
+//        given().
+//                headers(headerMap).
+//                body(payload).
+//
+//        when().
+//                get(browseURL).
+//
+//        then().
+//                log().headers().statusCode(200);
+//
+//
+//    }
 
 
-    }
-
-
-    @Test
-    public void SATCron(){
-
-        given().when().get("https://api-stripe-eu.test.jeev.es/cron/pull-satws-invoices").then().log().body();
-
-    }
+//    @Test
+//    public void SATCron(){
+//
+//        given().when().get("https://api-stripe-eu.test.jeev.es/cron/pull-satws-invoices").then().log().body();
+//
+//    }
 
 
 
